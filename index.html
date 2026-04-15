@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intro to Agentic AI for Healthcare | Summer Workshop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-pending">
+  <main>
+    <header class="hero">
+      <h1>Agentic AI for Healthcare</h1>
+      <p>This site collects the setup guide, healthcare-safe prompt examples, and starter project ideas you can use to build AI agents for healthcare workflows.</p>
+      <div class="button-row">
+        <a class="button primary" href="codex.html">Codex Setup</a>
+        <a class="button" href="#prompts">Healthcare Prompts</a>
+      </div>
+    </header>
+
+    <section class="section">
+      <p class="section-label">Later</p>
+      <h2>How students should think about healthcare agents</h2>
+      <p>This section plays the role of the original workshop's later/advanced notes, but for healthcare. Students should not start with autonomy. They should start with narrow task definitions, explicit safety boundaries, and human review.</p>
+      <div class="terminal-columns">
+        <article class="card">
+          <h3>Design checklist</h3>
+          <ol>
+            <li>Choose one narrow workflow, such as inbox triage or visit summarization.</li>
+            <li>Define the user: clinician, student, scheduler, nurse, patient educator, or analyst.</li>
+            <li>Specify trusted inputs and refuse to hallucinate missing data.</li>
+            <li>Require structured output so a human can review the work quickly.</li>
+            <li>Add escalation logic for emergencies or uncertainty.</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h3>Failure checklist</h3>
+          <ol>
+            <li>Did the agent invent diagnoses, medications, or lab values?</li>
+            <li>Did it miss an emergency red flag?</li>
+            <li>Did it confuse patient-reported symptoms with clinician findings?</li>
+            <li>Did it hide uncertainty instead of surfacing it?</li>
+            <li>Did it skip the required handoff to a human reviewer?</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-label">Starter Kit</p>
+      <h2>Minimal healthcare agent system prompt</h2>
+      <p>You can start from this template and adapt it to a narrow healthcare workflow.</p>
+      <div class="command-block">
+        <code>You are a healthcare workflow agent for a teaching environment.
+
+Your job:
+1. Complete one narrow task.
+2. Use only the information provided to you.
+3. Never invent symptoms, diagnoses, labs, medications, or vital signs.
+4. State missing or uncertain information explicitly.
+5. Escalate emergencies or severe red flags immediately.
+6. Produce output in a structured format for human review.
+
+If the task is high risk, stop and generate a handoff note instead of direct advice.</code>
+      </div>
+    </section>
+
+    <section class="section" id="prompts">
+      <p class="section-label">Prompts</p>
+      <h2>Starter prompts for healthcare workshop experiments</h2>
+      <p>These replace the original prompt examples with healthcare-specific ones that are safer and more relevant for your summer course.</p>
+      <div class="prompt-grid">
+        <article class="prompt" data-category="triage">
+          <span class="prompt-number">Prompt 1</span>
+          <h3>Patient inbox triage agent</h3>
+          <div class="prompt-body">Build a project called “Patient Inbox Triage” that reads incoming patient portal messages and routes them into emergency escalation, same-day clinical review, routine review, or administrative handling. Require explicit red-flag detection, missing-information reporting, and a patient-facing reply draft that does not diagnose or prescribe. Include app code, tests, sample data, docs, and a short failure-mode analysis. Keep it scoped for a course demo.</div>
+        </article>
+
+        <article class="prompt" data-category="monitoring">
+          <span class="prompt-number">Prompt 2</span>
+          <h3>Remote monitoring dashboard</h3>
+          <div class="prompt-body">Download or simulate home monitoring data for a chronic-care scenario such as hypertension, heart failure, or sleep monitoring. Build a small web dashboard that shows trends, highlights possible deterioration, and drafts clinician summaries. Include safe escalation logic and make clear that the dashboard is for review support rather than independent diagnosis.</div>
+        </article>
+
+        <article class="prompt" data-category="operations">
+          <span class="prompt-number">Prompt 3</span>
+          <h3>Medication reconciliation agent</h3>
+          <div class="prompt-body">Build an agent that compares hospital discharge medications, outpatient medications, and patient-reported medications. It should identify possible duplicates, omissions, and dose conflicts, then prepare a structured pharmacist review summary. It must not recommend starting, stopping, or changing medications on its own.</div>
+        </article>
+
+        <article class="prompt" data-category="documentation">
+          <span class="prompt-number">Prompt 4</span>
+          <h3>Clinical coding support</h3>
+          <div class="prompt-body">Design an agent that reads a progress note and extracts evidence relevant to coding support. For every extracted condition, quote the exact phrase that supports it. Separate documented conditions from suspected ones, do not assign final billing codes automatically, and return a coder review checklist.</div>
+        </article>
+
+        <article class="prompt" data-category="monitoring">
+          <span class="prompt-number">Prompt 5</span>
+          <h3>Wearable sleep or apnea monitoring agent</h3>
+          <div class="prompt-body">Create an agent that reviews wearable sleep summaries, pulse trends, motion signals, and symptom notes to determine whether the pattern looks stable, worsening, or unclear. The output should be a trend summary, a review recommendation, urgent flags, and a patient-facing next-step draft. The agent must not diagnose sleep apnea or prescribe treatment.</div>
+        </article>
+
+        <article class="prompt prompt-custom" data-category="all">
+          <span class="prompt-number">Prompt 6</span>
+          <h3>Choose your own healthcare workflow</h3>
+          <div class="prompt-body">Pick a workflow from clinical operations, education, patient communication, remote monitoring, public health, or quality improvement.
+
+If you want better results, specify:
+- the user
+- the workflow goal
+- the available data
+- the required structured output
+- the safety boundaries
+- the required escalation or review path</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-label">Projects</p>
+      <h2>Mini project ideas</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Nurse inbox copilot</h3>
+          <p>Classify portal messages, extract red flags, and draft safe handoffs.</p>
+        </article>
+        <article class="card">
+          <h3>Remote follow-up agent</h3>
+          <p>Summarize home monitoring data and decide when human review is needed.</p>
+        </article>
+        <article class="card">
+          <h3>Referral packet summarizer</h3>
+          <p>Prepare a specialist-facing chart summary with provenance and uncertainty flags.</p>
+        </article>
+        <article class="card">
+          <h3>Sleep monitoring assistant</h3>
+          <p>Review wearable sleep data, surface trends, and generate a review summary.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer>Agentic AI for Healthcare</footer>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

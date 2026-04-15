@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Codex Setup | Intro to Agentic AI for Healthcare</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-pending">
+  <main>
+    <a class="button" href="index.html">Back to workshop home</a>
+
+    <section class="section">
+      <p class="section-label">Codex Setup</p>
+      <h1>Set up Codex</h1>
+      <p class="intro">Codex is OpenAI's terminal-based agentic AI tool. Use this path if you have a ChatGPT Plus or OpenAI API subscription. After setup, come back to the healthcare workshop home page for the prompt examples and project ideas.</p>
+    </section>
+
+    <section class="section">
+      <span class="step-badge">Step 1</span>
+      <h2>Install Node.js</h2>
+      <p class="muted">Codex requires Node.js. Go to <strong>nodejs.org</strong> and download the <strong>LTS</strong> version for your operating system. Run the installer and accept all defaults.</p>
+      <p class="muted">To verify it installed, open your terminal and run:</p>
+      <div class="code-block">node --version</div>
+      <p class="muted">If you see a version number, you are ready for the next step.</p>
+    </section>
+
+    <section class="section">
+      <span class="step-badge">Step 2</span>
+      <h2>Install Codex</h2>
+      <p class="muted">In Terminal, Windows Terminal, or PowerShell, run:</p>
+      <div class="code-block">npm install -g @openai/codex</div>
+      <p class="muted">When it finishes, you should see a success message with no red errors.</p>
+    </section>
+
+    <section class="section">
+      <span class="step-badge">Step 3</span>
+      <h2>Get your OpenAI API key and authenticate</h2>
+      <p class="muted">Codex uses an OpenAI API key. To get one, sign in at <strong>platform.openai.com</strong>, go to <strong>Settings &gt; API Keys</strong>, and create a new key. Copy it when it is created.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Mac</h3>
+          <p class="muted">Paste your key in place of <code>your-key-here</code>:</p>
+          <div class="code-block">export OPENAI_API_KEY=your-key-here
+codex</div>
+        </article>
+        <article class="card">
+          <h3>Windows (PowerShell)</h3>
+          <p class="muted">Paste your key in place of <code>your-key-here</code>:</p>
+          <div class="code-block">$env:OPENAI_API_KEY="your-key-here"
+codex</div>
+        </article>
+      </div>
+      <div class="note">You need your own OpenAI key for Codex. For this healthcare workshop, keep your projects in the space of workflow support, summarization, monitoring, coding support, and triage routing rather than unrestricted diagnosis or treatment agents.</div>
+    </section>
+
+    <section class="section">
+      <span class="step-badge">Step 4 (Optional)</span>
+      <h2>Review sandboxing settings</h2>
+      <p class="muted">Codex uses sandbox and approval settings to control what it can do on its own. Common modes are <code>read-only</code>, <code>workspace-write</code>, and <code>danger-full-access</code>.</p>
+      <p class="muted">Inside Codex, type <code>/permissions</code> to inspect or change the mode during a session.</p>
+      <p class="muted">Official docs: <a href="https://developers.openai.com/codex/concepts/sandboxing" target="_blank" rel="noreferrer">OpenAI Codex sandboxing guide</a></p>
+    </section>
+
+    <section class="section">
+      <span class="step-badge">Step 5 (Optional)</span>
+      <h2>Turn off “Improve the model for everyone”</h2>
+      <p class="muted">If you are using a personal ChatGPT account and do not want your ChatGPT or Codex activity used to improve OpenAI's models, review your data controls.</p>
+      <ol>
+        <li class="muted">Open <a href="https://chatgpt.com/#settings/DataControls" target="_blank" rel="noopener">ChatGPT Data Controls</a>.</li>
+        <li class="muted">Find <strong>“Improve the model for everyone”</strong> and turn it <strong>off</strong>.</li>
+      </ol>
+      <p class="muted">Official docs: <a href="https://help.openai.com/en/articles/7730893-data-usage-for-consumers" target="_blank" rel="noreferrer">Data Controls FAQ</a></p>
+    </section>
+
+    <section class="section">
+      <span class="step-badge">Step 6</span>
+      <h2>Navigate to a folder and start working</h2>
+      <p class="muted">Codex works on the files in whichever folder you are in when you launch it. Navigate there first, then start Codex.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Mac</h3>
+          <ol>
+            <li>In Terminal, go to a folder you want to work in:<div class="code-block">cd Desktop</div></li>
+            <li>Set your API key and launch Codex as shown above.</li>
+            <li>Type a prompt and press Enter.</li>
+            <li>To exit, press <code>Ctrl + C</code>.</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h3>Windows</h3>
+          <ol>
+            <li>In PowerShell or Windows Terminal, go to a folder you want to work in:<div class="code-block">cd Desktop</div></li>
+            <li>Set your API key and launch Codex as shown above.</li>
+            <li>Type a prompt and press Enter.</li>
+            <li>To exit, press <code>Ctrl + C</code>.</li>
+          </ol>
+        </article>
+      </div>
+      <div class="note">A simple first test prompt: <em>“List the files in this folder and give me one sentence about what each one might be.”</em></div>
+    </section>
+
+    <section class="section">
+      <span class="step-badge">More Info</span>
+      <h2>Official documentation</h2>
+      <ul>
+        <li class="muted"><a href="https://developers.openai.com/codex/quickstart" target="_blank" rel="noopener">OpenAI Codex Documentation</a></li>
+      </ul>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+</body>
+</html>
