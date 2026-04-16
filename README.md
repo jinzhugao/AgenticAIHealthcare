@@ -25,7 +25,7 @@ http://127.0.0.1:8010
 
 ## Notes
 
-- This site now includes a lightweight browser-side password gate. The current password is `HealthcareSummer2026`.
+- This site now includes a lightweight browser-side password gate. The current password is `UOP`.
 - To change the password, replace the SHA-256 hash in `auth.js` with a hash of your new password.
 - Because this is a static site, this is only light access control for students, not strong server-side security.
 - The referenced source site was password-protected, so this version mirrors the workshop format at a high level rather than reproducing hidden content directly.

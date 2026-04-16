@@ -1,5 +1,5 @@
 const AUTH_CONFIG = {
-  passwordHash: "bba9b5186e3856caf4a383a8e3e08d9a5e30fe0e8899f126afaed2eae5748f3b",
+  passwordHash: "83c1e821bbf24770d65d4b23218fcb554383724b6309990e80aed2f0a2c75d9a",
   storageKey: "agentic-ai-healthcare-authenticated",
   title: "Agentic AI for Healthcare",
   message: "Enter the course password to open this workshop site.",
