@@ -10,7 +10,7 @@
   <main>
     <header class="hero">
       <h1>Agentic AI for Healthcare</h1>
-      <p>This site collects the setup guide, healthcare-safe prompt examples, and starter project ideas you can use to build AI agents for healthcare workflows.</p>
+      <p>This site collects the setup guide, healthcare-safe prompt examples, current regulatory context, and starter project ideas you can use to build AI agents for healthcare workflows.</p>
       <div class="button-row">
         <a class="button primary" href="codex.html">Codex Setup</a>
         <a class="button" href="#prompts">Healthcare Prompts</a>
@@ -20,7 +20,7 @@
     <section class="section">
       <p class="section-label">Later</p>
       <h2>How students should think about healthcare agents</h2>
-      <p>This section plays the role of the original workshop's later/advanced notes, but for healthcare. Students should not start with autonomy. They should start with narrow task definitions, explicit safety boundaries, and human review.</p>
+      <p>This section plays the role of the original workshop's later/advanced notes, but for healthcare. Students should not start with autonomy. They should start with narrow task definitions, explicit safety boundaries, privacy constraints, and human review.</p>
       <div class="terminal-columns">
         <article class="card">
           <h3>Design checklist</h3>
@@ -30,6 +30,7 @@
             <li>Specify trusted inputs and refuse to hallucinate missing data.</li>
             <li>Require structured output so a human can review the work quickly.</li>
             <li>Add escalation logic for emergencies or uncertainty.</li>
+            <li>Use synthetic, public, or properly de-identified data unless the tool and setting are approved for PHI.</li>
           </ol>
         </article>
         <article class="card">
@@ -40,9 +41,40 @@
             <li>Did it confuse patient-reported symptoms with clinician findings?</li>
             <li>Did it hide uncertainty instead of surfacing it?</li>
             <li>Did it skip the required handoff to a human reviewer?</li>
+            <li>Did it expose PHI, identifiers, or sensitive operational data to an unapproved service?</li>
           </ol>
         </article>
       </div>
+    </section>
+
+    <section class="section">
+      <p class="section-label">July 2026 Update</p>
+      <h2>Current safety and regulatory context</h2>
+      <p>For this class, treat these projects as teaching demos unless they have institutional approval, privacy review, clinical validation, and a defined human accountability path.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Privacy and PHI</h3>
+          <p>HIPAA de-identification still centers on two methods: Expert Determination or Safe Harbor. Synthetic data is the safest default for class projects.</p>
+        </article>
+        <article class="card">
+          <h3>Medical device boundary</h3>
+          <p>Tools that make clinical predictions, recommendations, or decisions may cross into FDA-regulated medical-device software. Keep demos framed as workflow support unless you are teaching regulation directly.</p>
+        </article>
+        <article class="card">
+          <h3>Transparency</h3>
+          <p>Ask students to document data sources, intended users, known limitations, failure cases, and when a human must take over.</p>
+        </article>
+        <article class="card">
+          <h3>Evaluation</h3>
+          <p>Require test cases for red flags, missing information, conflicting evidence, demographic variation, and prompt-injection attempts.</p>
+        </article>
+      </div>
+      <div class="note">Classroom rule: no real patient data, no clinical deployment, no autonomous diagnosis or treatment, and no final patient-facing message without human review.</div>
+      <ul class="source-list">
+        <li><a href="https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html" target="_blank" rel="noopener">HHS HIPAA de-identification guidance</a></li>
+        <li><a href="https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device" target="_blank" rel="noopener">FDA AI in Software as a Medical Device</a></li>
+        <li><a href="https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-enabled-medical-devices" target="_blank" rel="noopener">FDA AI-enabled medical devices list</a></li>
+      </ul>
     </section>
 
     <section class="section">
@@ -59,6 +91,7 @@ Your job:
 4. State missing or uncertain information explicitly.
 5. Escalate emergencies or severe red flags immediately.
 6. Produce output in a structured format for human review.
+7. Do not use or request real patient identifiers in this teaching demo.
 
 If the task is high risk, stop and generate a handoff note instead of direct advice.</code>
       </div>
@@ -78,7 +111,7 @@ If the task is high risk, stop and generate a handoff note instead of direct adv
         <article class="prompt" data-category="monitoring">
           <span class="prompt-number">Prompt 2</span>
           <h3>Remote monitoring dashboard</h3>
-          <div class="prompt-body">Download or simulate home monitoring data for a chronic-care scenario such as hypertension, heart failure, or sleep monitoring. Build a small web dashboard that shows trends, highlights possible deterioration, and drafts clinician summaries. Include safe escalation logic and make clear that the dashboard is for review support rather than independent diagnosis.</div>
+          <div class="prompt-body">Simulate home monitoring data for a chronic-care scenario such as hypertension, heart failure, or sleep monitoring. Build a small web dashboard that shows trends, highlights possible deterioration, and drafts clinician summaries. Include safe escalation logic, missing-data warnings, and make clear that the dashboard is for review support rather than independent diagnosis.</div>
         </article>
 
         <article class="prompt" data-category="operations">
@@ -96,7 +129,7 @@ If the task is high risk, stop and generate a handoff note instead of direct adv
         <article class="prompt" data-category="monitoring">
           <span class="prompt-number">Prompt 5</span>
           <h3>Wearable sleep or apnea monitoring agent</h3>
-          <div class="prompt-body">Create an agent that reviews wearable sleep summaries, pulse trends, motion signals, and symptom notes to determine whether the pattern looks stable, worsening, or unclear. The output should be a trend summary, a review recommendation, urgent flags, and a patient-facing next-step draft. The agent must not diagnose sleep apnea or prescribe treatment.</div>
+          <div class="prompt-body">Create an agent that reviews simulated wearable sleep summaries, pulse trends, motion signals, and symptom notes to determine whether the pattern looks stable, worsening, or unclear. The output should be a trend summary, a review recommendation, urgent flags, and a patient-facing next-step draft. The agent must not diagnose sleep apnea or prescribe treatment.</div>
         </article>
 
         <article class="prompt prompt-custom" data-category="all">

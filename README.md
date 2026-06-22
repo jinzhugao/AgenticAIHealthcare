@@ -30,3 +30,4 @@ http://127.0.0.1:8010
 - Because this is a static site, this is only light access control for students, not strong server-side security.
 - The referenced source site was password-protected, so this version mirrors the workshop format at a high level rather than reproducing hidden content directly.
 - Prompt examples were rewritten for healthcare teaching use, including triage, documentation, monitoring, medication reconciliation, coding support, and sleep/apnea monitoring.
+- Content reviewed for July 2026 teaching on 2026-06-22 against current OpenAI Codex docs, Anthropic Claude Code setup docs, HHS HIPAA de-identification guidance, and FDA AI-enabled medical-device pages.

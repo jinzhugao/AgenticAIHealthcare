@@ -165,6 +165,10 @@ h3 {
   color: var(--pacific-muted);
 }
 
+.muted {
+  color: var(--pacific-muted);
+}
+
 .link-row {
   margin-top: 1rem;
 }
@@ -229,6 +233,34 @@ h3 {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.95rem;
   color: var(--pacific-charcoal);
+}
+
+.code-block {
+  margin: 0.6rem 0 0.9rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--pacific-border);
+  border-radius: 12px;
+  background: #fff;
+  overflow-x: auto;
+  white-space: pre;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.92rem;
+  color: var(--pacific-charcoal);
+}
+
+.source-list {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--pacific-muted);
+}
+
+.source-list li + li {
+  margin-top: 0.45rem;
+}
+
+.source-list a {
+  color: var(--health-teal);
+  font-weight: 600;
 }
 
 footer {

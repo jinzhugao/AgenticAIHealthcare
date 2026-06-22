@@ -13,13 +13,13 @@
     <section class="section">
       <p class="section-label">Codex Setup</p>
       <h1>Set up Codex</h1>
-      <p class="intro">Codex is OpenAI's terminal-based agentic AI tool. Use this path if you have a ChatGPT Plus or OpenAI API subscription. After setup, come back to the healthcare workshop home page for the prompt examples and project ideas.</p>
+      <p class="intro">Codex is OpenAI's coding agent for terminal, IDE, desktop, and cloud workflows. Use this path if you have access through a ChatGPT plan or an OpenAI API account. After setup, come back to the healthcare workshop home page for the prompt examples and project ideas.</p>
     </section>
 
     <section class="section">
       <span class="step-badge">Step 1</span>
       <h2>Install Node.js</h2>
-      <p class="muted">Codex requires Node.js. Go to <strong>nodejs.org</strong> and download the <strong>LTS</strong> version for your operating system. Run the installer and accept all defaults.</p>
+      <p class="muted">The npm installation path for Codex uses Node.js. Go to <strong>nodejs.org</strong> and download the <strong>LTS</strong> version for your operating system. Run the installer and accept all defaults.</p>
       <p class="muted">To verify it installed, open your terminal and run:</p>
       <div class="code-block">node --version</div>
       <p class="muted">If you see a version number, you are ready for the next step.</p>
@@ -35,23 +35,26 @@
 
     <section class="section">
       <span class="step-badge">Step 3</span>
-      <h2>Get your OpenAI API key and authenticate</h2>
-      <p class="muted">Codex uses an OpenAI API key. To get one, sign in at <strong>platform.openai.com</strong>, go to <strong>Settings &gt; API Keys</strong>, and create a new key. Copy it when it is created.</p>
+      <h2>Authenticate</h2>
+      <p class="muted">Codex supports two OpenAI sign-in paths. For most students, run <code>codex login</code> and sign in with ChatGPT in the browser. API keys are still useful for API-billed or programmatic workflows.</p>
       <div class="grid">
         <article class="card">
-          <h3>Mac</h3>
-          <p class="muted">Paste your key in place of <code>your-key-here</code>:</p>
-          <div class="code-block">export OPENAI_API_KEY=your-key-here
+          <h3>ChatGPT sign-in</h3>
+          <p class="muted">Recommended for students with ChatGPT plan access:</p>
+          <div class="code-block">codex login
 codex</div>
         </article>
         <article class="card">
-          <h3>Windows (PowerShell)</h3>
-          <p class="muted">Paste your key in place of <code>your-key-here</code>:</p>
+          <h3>API key sign-in</h3>
+          <p class="muted">Use this when billing through an OpenAI Platform account. On macOS or Linux:</p>
+          <div class="code-block">export OPENAI_API_KEY=your-key-here
+codex</div>
+          <p class="muted">On Windows PowerShell:</p>
           <div class="code-block">$env:OPENAI_API_KEY="your-key-here"
 codex</div>
         </article>
       </div>
-      <div class="note">You need your own OpenAI key for Codex. For this healthcare workshop, keep your projects in the space of workflow support, summarization, monitoring, coding support, and triage routing rather than unrestricted diagnosis or treatment agents.</div>
+      <div class="note">Your sign-in method affects billing, feature availability, workspace controls, and data-handling policies. For this healthcare workshop, keep projects in workflow support, summarization, monitoring, coding support, and triage routing rather than unrestricted diagnosis or treatment agents.</div>
     </section>
 
     <section class="section">
@@ -65,7 +68,7 @@ codex</div>
     <section class="section">
       <span class="step-badge">Step 5 (Optional)</span>
       <h2>Turn off “Improve the model for everyone”</h2>
-      <p class="muted">If you are using a personal ChatGPT account and do not want your ChatGPT or Codex activity used to improve OpenAI's models, review your data controls.</p>
+      <p class="muted">If you are using a personal ChatGPT account and do not want your ChatGPT or Codex activity used to improve OpenAI's models, review your data controls. If you authenticate with an API key, review the OpenAI Platform organization's data settings instead.</p>
       <ol>
         <li class="muted">Open <a href="https://chatgpt.com/#settings/DataControls" target="_blank" rel="noopener">ChatGPT Data Controls</a>.</li>
         <li class="muted">Find <strong>“Improve the model for everyone”</strong> and turn it <strong>off</strong>.</li>
@@ -82,7 +85,7 @@ codex</div>
           <h3>Mac</h3>
           <ol>
             <li>In Terminal, go to a folder you want to work in:<div class="code-block">cd Desktop</div></li>
-            <li>Set your API key and launch Codex as shown above.</li>
+            <li>Authenticate and launch Codex as shown above.</li>
             <li>Type a prompt and press Enter.</li>
             <li>To exit, press <code>Ctrl + C</code>.</li>
           </ol>
@@ -91,7 +94,7 @@ codex</div>
           <h3>Windows</h3>
           <ol>
             <li>In PowerShell or Windows Terminal, go to a folder you want to work in:<div class="code-block">cd Desktop</div></li>
-            <li>Set your API key and launch Codex as shown above.</li>
+            <li>Authenticate and launch Codex as shown above.</li>
             <li>Type a prompt and press Enter.</li>
             <li>To exit, press <code>Ctrl + C</code>.</li>
           </ol>
@@ -105,6 +108,7 @@ codex</div>
       <h2>Official documentation</h2>
       <ul>
         <li class="muted"><a href="https://developers.openai.com/codex/quickstart" target="_blank" rel="noopener">OpenAI Codex Documentation</a></li>
+        <li class="muted"><a href="https://developers.openai.com/codex/auth" target="_blank" rel="noopener">OpenAI Codex Authentication</a></li>
       </ul>
     </section>
   </main>
